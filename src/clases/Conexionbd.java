@@ -1,7 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
+ 
 package clases;
 
 import java.sql.Connection;
@@ -9,11 +7,39 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author user
- */
-public class Conexionbd {
+// Prueba 3, conexión BD
+public class conexionsql {
+  public class conexionsql {
+
+	Connection conn = null;
+	String url = "jdbc:postgresql://localhost/adminprueba";
+	String usuario = "postgres";
+	String clave = "Kiernan.14";
+	
+	
+	public void conectar() {
+		try {
+			Class.forName("org.postgresql.Driver");
+			conn = DriverManager.getConnection(url, usuario, clave);
+			JOptionPane.showInputDialog(null, "Conexion exitosa con la base de datos", "Conexion", JOptionPane.INFORMATION_MESSAGE);
+			
+		}catch(Exception e) {
+			JOptionPane.showInputDialog(null, "No se ha podido conectar con la base de datos" + e, "Conexion", JOptionPane.ERROR_MESSAGE);
+		}
+	}
+	
+	public void cierre(){
+		try {
+			conn.close();
+			JOptionPane.showInputDialog(null, "Se ha desconectado de la base de datos", "Desconexion", JOptionPane.INFORMATION_MESSAGE);
+		}catch(Exception e){
+			JOptionPane.showInputDialog(null, "No se ha podido desconectar con la base de datos" + e, "Desconexion", JOptionPane.ERROR_MESSAGE);
+			
+			
+		}
+		
+	}
+  
   /*  public static Connection getConnection(){
         String cadena = "jdbc:sqlserver://localhost:1433;"
                 + "database=dbSistema;"
@@ -33,7 +59,7 @@ public class Conexionbd {
        
         
     }*/
-     Connection conectar = null;
+     /*Connection conectar = null;
     String user ="user1";
     String contra = "kiernan";
     String bd = "dbSistema";
@@ -53,5 +79,6 @@ public class Conexionbd {
             
         }
         return conectar;
-    }
+    }*/
+  
 }
