@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 // Prueba 3, conexión BD
 public class conexionsql {
-  public class conexionsql {
+
 
 	Connection conn = null;
 	String url = "jdbc:postgresql://localhost/adminprueba";
