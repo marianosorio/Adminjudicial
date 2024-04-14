@@ -1,0 +1,77 @@
+//Tablas de la base de datos 
+--Tabla demandantes
+create table demandantes(
+	codigoexpediente serial primary key,
+	nombre varchar (50) not null unique,
+	apellido varchar (50),
+	casa varchar(50),
+	calle varchar (50),
+	ciudad varchar (50),
+	departamento varchar (50),
+	ID varchar (30) unique,
+	sexo varchar (40),
+	genero varchar (50),
+	razon varchar (300),
+	delitos TEXT
+);
+
+--Tabla demandados
+create table demandados(
+	codigoexpediente serial primary key,
+	nombre varchar (50) not null unique,
+	apellido varchar (50),
+	casa varchar(50),
+	calle varchar (50),
+	ciudad varchar (50),
+	departamento varchar (50),
+	ID varchar (30) unique,
+	sexo varchar (40),
+	genero varchar (50),
+	antecedentes varchar (30),
+	delitos TEXT
+);
+
+
+select * from demandados;
+
+--Tabla testigos
+create table testigos(
+	codigoexpediente serial primary key,
+	nombre varchar (50) not null unique,
+	apellido varchar (50),
+	casa varchar(50),
+	calle varchar (50),
+	ciudad varchar (50),
+	departamento varchar (50),
+	ID varchar (30) unique,
+	sexo varchar (40),
+	genero varchar (50),
+	relacion varchar(50),
+	declaracion varchar (300),
+	numero_celular integer
+);
+
+--Tabla policias
+create table policias(
+	codigoexpediente serial primary key,
+	nombre varchar (50) not null unique,
+	apellido varchar (50),
+	casa varchar(50),
+	calle varchar (50),
+	ciudad varchar (50),
+	departamento varchar (50),
+	ID varchar (30) unique,
+	sexo varchar (40),
+	genero varchar (50),
+	rango varchar (30),
+	codigo integer 
+	
+);
+
+select * from demandantes;
+ALTER TABLE demandantes
+ALTER COLUMN  razon TYPE varchar(300);
+
+ALTER TABLE testigos
+ALTER COLUMN declaracion TYPE varchar(300);
+
