@@ -17,6 +17,8 @@ public class Principal {
 	static Scanner scanner = new Scanner(System.in);
 	 
     public static void main(String[] args) {
+	    conexion objetoConexion = new conexion();
+            objetoConexion.GestorConexion();
 	    ArrayList<String> delitosSeleccionados = new ArrayList<>();
         String _codigoexpediente;
         boolean centinelasistema = true;
