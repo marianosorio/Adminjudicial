@@ -14,6 +14,15 @@ import javafx.fxml.Initializable;
  * @author user
  */
 public class VistatestigoController implements Initializable {
+     public ComboBox cbtestigo;
+    ObservableList <String> delitosList = FXCollections.observableArrayList("Estafa", "Robo", "Fraude", "Homicidio", "Secuestro");
+    
+
+    @FXML
+    void listardelitos(ActionEvent event) {
+        Llenarcb(cbtestigo, delitosList);
+
+    }
 
     /**
      * Initializes the controller class.
